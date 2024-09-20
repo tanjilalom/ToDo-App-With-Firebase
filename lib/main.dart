@@ -1,10 +1,10 @@
-import 'package:firebase/auth/login_screen.dart';
-import 'package:firebase/screen/home_screen.dart';
-import 'package:firebase/screen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:todo_app_with_firebase/auth/login_screen.dart';
+import 'package:todo_app_with_firebase/screen/home_screen.dart';
+import 'package:todo_app_with_firebase/screen/splash_screen.dart';
 
 Future main() async {
   SystemChrome.setSystemUIOverlayStyle(
