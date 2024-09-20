@@ -1,7 +1,7 @@
-import 'package:firebase/screen/tasks.dart';
-import 'package:firebase/widget/add_task_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app_with_firebase/screen/tasks.dart';
+import 'package:todo_app_with_firebase/widget/add_task_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -12,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final PageController pageController = PageController(initialPage: 0);
-  late int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
