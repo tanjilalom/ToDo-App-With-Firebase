@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase/widget/delete_task_dialog.dart';
-import 'package:firebase/widget/update_task_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app_with_firebase/widget/delete_task_dialog.dart';
+import 'package:todo_app_with_firebase/widget/update_task_dialog.dart';
 
 
 class Tasks extends StatefulWidget {
