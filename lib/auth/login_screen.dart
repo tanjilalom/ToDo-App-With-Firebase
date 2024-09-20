@@ -1,11 +1,11 @@
-import 'package:firebase/auth/firebase_auth/firebase_auth_services.dart';
-import 'package:firebase/auth/signup_screen.dart';
-import 'package:firebase/widget/button_widget.dart';
-import 'package:firebase/widget/textfield_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo_app_with_firebase/auth/firebase_auth/firebase_auth_services.dart';
+import 'package:todo_app_with_firebase/auth/signup_screen.dart';
+import 'package:todo_app_with_firebase/widget/button_widget.dart';
+import 'package:todo_app_with_firebase/widget/textfield_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
