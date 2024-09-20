@@ -1,6 +1,6 @@
-import 'package:firebase/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo_app_with_firebase/auth/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   final Widget? child;
