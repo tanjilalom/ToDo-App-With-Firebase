@@ -7,7 +7,10 @@ class UpdateTaskAlertDialog extends StatefulWidget {
   final String taskId, taskName, taskDesc;
 
   const UpdateTaskAlertDialog(
-      {Key? Key, required this.taskId, required this.taskName, required this.taskDesc})
+      {Key? Key,
+      required this.taskId,
+      required this.taskName,
+      required this.taskDesc})
       : super(key: Key);
 
   @override
@@ -47,7 +50,8 @@ class _UpdateTaskAlertDialogState extends State<UpdateTaskAlertDialog> {
                     horizontal: 20,
                     vertical: 20,
                   ),
-                  icon: const Icon(CupertinoIcons.square_list, color: Colors.brown),
+                  icon: const Icon(CupertinoIcons.square_list,
+                      color: Colors.brown),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -64,7 +68,8 @@ class _UpdateTaskAlertDialogState extends State<UpdateTaskAlertDialog> {
                     horizontal: 20,
                     vertical: 20,
                   ),
-                  icon: const Icon(CupertinoIcons.bubble_left_bubble_right, color: Colors.brown),
+                  icon: const Icon(CupertinoIcons.bubble_left_bubble_right,
+                      color: Colors.brown),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -86,7 +91,10 @@ class _UpdateTaskAlertDialogState extends State<UpdateTaskAlertDialog> {
           onPressed: () {
             final taskName = taskNameController.text;
             final taskDesc = taskDescController.text;
-            _updateTasks(taskName, taskDesc,);
+            _updateTasks(
+              taskName,
+              taskDesc,
+            );
             Navigator.of(context, rootNavigator: true).pop();
           },
           child: const Text('Update'),
@@ -95,13 +103,14 @@ class _UpdateTaskAlertDialogState extends State<UpdateTaskAlertDialog> {
     );
   }
 
-
-
   Future _updateTasks(String taskName, String taskDesc) async {
     var collection = FirebaseFirestore.instance.collection('tasks');
     collection
         .doc(widget.taskId)
-        .update({'taskName': taskName, 'taskDesc': taskDesc,})
+        .update({
+          'taskName': taskName,
+          'taskDesc': taskDesc,
+        })
         .then(
           (_) => Get.snackbar('Update', 'Task updated successfully'),
         )

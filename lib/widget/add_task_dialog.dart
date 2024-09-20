@@ -43,7 +43,8 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
                   ),
                   hintText: 'Task',
                   hintStyle: const TextStyle(fontSize: 14),
-                  icon: const Icon(CupertinoIcons.square_list, color: Colors.brown),
+                  icon: const Icon(CupertinoIcons.square_list,
+                      color: Colors.brown),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -62,7 +63,8 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
                   ),
                   hintText: 'Description',
                   hintStyle: TextStyle(fontSize: 14),
-                  icon: const Icon(CupertinoIcons.bubble_left_bubble_right, color: Colors.brown),
+                  icon: const Icon(CupertinoIcons.bubble_left_bubble_right,
+                      color: Colors.brown),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -76,7 +78,8 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
       actions: [
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context, rootNavigator: true).pop(); // Close the dialog
+            Navigator.of(context, rootNavigator: true)
+                .pop(); // Close the dialog
           },
           style: ElevatedButton.styleFrom(),
           child: const Text('Cancel'),
@@ -89,7 +92,8 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
             if (taskName.isNotEmpty && taskDesc.isNotEmpty) {
               try {
                 await _addTasks(taskName: taskName, taskDesc: taskDesc);
-                Navigator.of(context, rootNavigator: true).pop(); // Close the dialog
+                Navigator.of(context, rootNavigator: true)
+                    .pop(); // Close the dialog
               } catch (e) {
                 // Show an error dialog if Firebase operation fails
                 showDialog(
@@ -97,7 +101,8 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
                   builder: (BuildContext context) {
                     return AlertDialog(
                       title: const Text('Error'),
-                      content: const Text('Failed to save task. Please try again.'),
+                      content:
+                          const Text('Failed to save task. Please try again.'),
                       actions: <Widget>[
                         TextButton(
                           child: const Text('OK'),
@@ -117,7 +122,8 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
                 builder: (BuildContext context) {
                   return AlertDialog(
                     title: const Text('Error'),
-                    content: const Text('Task name and description cannot be empty.'),
+                    content: const Text(
+                        'Task name and description cannot be empty.'),
                     actions: <Widget>[
                       TextButton(
                         child: const Text('OK'),
@@ -137,18 +143,24 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
     );
   }
 
-  Future<void> _addTasks({required String taskName, required String taskDesc}) async {
+  Future<void> _addTasks(
+      {required String taskName, required String taskDesc}) async {
     try {
       // Add a new document with task name and description
-      DocumentReference docRef = await FirebaseFirestore.instance.collection('tasks').add({
+      DocumentReference docRef =
+          await FirebaseFirestore.instance.collection('tasks').add({
         'taskName': taskName,
         'taskDesc': taskDesc,
-        'createdAt': FieldValue.serverTimestamp(), // Add a timestamp field to avoid null
+        'createdAt':
+            FieldValue.serverTimestamp(), // Add a timestamp field to avoid null
       });
 
       // Update document with the task ID
       String taskId = docRef.id;
-      await FirebaseFirestore.instance.collection('tasks').doc(taskId).update({'id': taskId});
+      await FirebaseFirestore.instance
+          .collection('tasks')
+          .doc(taskId)
+          .update({'id': taskId});
 
       // Clear the form fields after successful addition
       _clearAll();
@@ -159,7 +171,6 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
       throw e; // Optionally rethrow to handle in the UI
     }
   }
-
 
   void _clearAll() {
     taskNameController.clear();

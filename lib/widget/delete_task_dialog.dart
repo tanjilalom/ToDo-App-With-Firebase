@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 class DeleteTaskDialog extends StatefulWidget {
   final String taskId, taskName;
 
-  const DeleteTaskDialog({Key? key, required this.taskId, required this.taskName}) : super(key: key);
+  const DeleteTaskDialog(
+      {Key? key, required this.taskId, required this.taskName})
+      : super(key: key);
 
   @override
   State<DeleteTaskDialog> createState() => _DeleteTaskDialogState();
@@ -32,7 +34,8 @@ class _DeleteTaskDialogState extends State<DeleteTaskDialog> {
               const SizedBox(height: 15),
               Text(
                 widget.taskName.toString(),
-                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 15),
             ],
