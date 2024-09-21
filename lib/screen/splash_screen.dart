@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       //Navigator.pushAndRemoveUntil(context, CupertinoPageRoute(builder: (_) => LoginScreen()), (route) => false);
       Get.offUntil(GetPageRoute(page: () => LoginScreen()), (route) => false,);
 
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Text(
-          'CARETUTORS',
+          'Todo App',
           style: TextStyle(
             fontSize: 35,
             fontWeight: FontWeight.bold,
