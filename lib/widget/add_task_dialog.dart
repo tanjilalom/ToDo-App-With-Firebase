@@ -54,7 +54,7 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
               TextFormField(
                 controller: taskDescController,
                 keyboardType: TextInputType.multiline,
-                maxLines: null,
+                maxLines: 6,
                 style: const TextStyle(fontSize: 14),
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
