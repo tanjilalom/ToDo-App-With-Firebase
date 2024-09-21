@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:255913326544:android:4645930c5fb82038ddabd5",
+        "mobilesdk_app_id": "1:255913326544:android:616a12b0ff33b0ccddabd5",
         "android_client_info": {
           "package_name": "com.example.firebase"
         }
@@ -26,7 +26,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:255913326544:android:4f04ae5174dee64bddabd5",
+        "mobilesdk_app_id": "1:255913326544:android:616a12b0ff33b0ccddabd5",
         "android_client_info": {
           "package_name": "com.example.todo_app_with_firebase"
         }
