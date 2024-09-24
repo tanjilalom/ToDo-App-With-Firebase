@@ -133,11 +133,11 @@ class _LoginScreenState extends State<LoginScreen> {
     User? user = await _auth.loginWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print("User is successfully login");
+      debugPrint("User is successfully login");
       Get.toNamed('/home');
       Get.snackbar('Clicked', 'Login Successfully');
     } else {
-      print("Some Error Occur");
+      debugPrint("Some Error Occur");
       Get.snackbar('Sorry', 'Please Enter A Correct Email and Password');
     }
   }
