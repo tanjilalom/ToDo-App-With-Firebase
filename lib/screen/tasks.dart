@@ -17,24 +17,24 @@ class _TasksState extends State<Tasks> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
       child: StreamBuilder<QuerySnapshot>(
         stream: fireStore.collection('tasks').snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Text('No tasks to display');
+            return const Text('No tasks to display');
           } else {
             return ListView(
               children: snapshot.data!.docs.map((DocumentSnapshot document) {
                 Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-                Color taskColor = Color(0xFF5871b6);
+                Color taskColor = const Color(0xFF5871b6);
                 return Container(
                   height: 100,
-                  margin: EdgeInsets.only(bottom: 15.0),
+                  margin: const EdgeInsets.only(bottom: 15.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     color: Colors.white,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Color(0xFFe8e8e8),
                         blurRadius: 5.0,
@@ -46,7 +46,7 @@ class _TasksState extends State<Tasks> {
                     leading: Container(
                       width: 20,
                       height: 20,
-                      padding: EdgeInsets.symmetric(vertical: 4.0),
+                      padding: const EdgeInsets.symmetric(vertical: 4.0),
                       alignment: Alignment.center,
                       child: CircleAvatar(
                         backgroundColor: taskColor,
@@ -60,7 +60,7 @@ class _TasksState extends State<Tasks> {
                         return [
                           PopupMenuItem(
                             value: 'edit',
-                            child: Text(
+                            child: const Text(
                               'Edit',
                               style: TextStyle(fontSize: 13.0),
                             ),
@@ -69,7 +69,7 @@ class _TasksState extends State<Tasks> {
                               String taskName = (data['taskName']);
                               String taskDesc = (data['taskDesc']);
                               Future.delayed(
-                                Duration(seconds: 0),
+                                const Duration(seconds: 0),
                                 () => showDialog(
                                   context: context,
                                   builder: (context) => UpdateTaskAlertDialog(taskId: taskId, taskName: taskName, taskDesc: taskDesc,),
@@ -79,7 +79,7 @@ class _TasksState extends State<Tasks> {
                           ),
                           PopupMenuItem(
                             value: 'delete',
-                            child: Text(
+                            child: const Text(
                               'Delete',
                               style: TextStyle(fontSize: 13.0),
                             ),
