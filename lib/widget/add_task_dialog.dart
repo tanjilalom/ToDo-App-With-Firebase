@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class AddTaskAlertDialog extends StatefulWidget {
   const AddTaskAlertDialog({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<AddTaskAlertDialog> createState() => _AddTaskAlertDialogState();

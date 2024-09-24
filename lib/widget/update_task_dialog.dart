@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class UpdateTaskAlertDialog extends StatefulWidget {
   final String taskId, taskName, taskDesc;
 
-  const UpdateTaskAlertDialog(
+   const UpdateTaskAlertDialog(
       {Key? Key,
       required this.taskId,
       required this.taskName,

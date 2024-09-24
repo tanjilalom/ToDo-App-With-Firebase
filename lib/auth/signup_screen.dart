@@ -8,7 +8,7 @@ import 'package:todo_app_with_firebase/widget/button_widget.dart';
 import 'package:todo_app_with_firebase/widget/textfield_widget.dart';
 
 class SignupScreen extends StatefulWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
@@ -17,10 +17,9 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   final FirebaseAuthServices _auth = FirebaseAuthServices();
 
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
@@ -39,16 +38,16 @@ class _SignupScreenState extends State<SignupScreen> {
         leading: TextButton(
           //onPressed: () => Get.back(),
           onPressed: () {},
-          child: Icon(CupertinoIcons.back),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xfff7f7f9),
+            backgroundColor: const Color(0xfff7f7f9),
           ),
+          child: const Icon(CupertinoIcons.back),
         ),
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -155,7 +154,8 @@ class _SignupScreenState extends State<SignupScreen> {
       Get.toNamed('/login');
       Get.snackbar('Clicked', 'Signup Successfully');
     } else {
-      print("Some Error Occure");
+      print("Some Error Occur");
+      Get.snackbar('Sorry', 'Some Error Occurred');
     }
   }
 }

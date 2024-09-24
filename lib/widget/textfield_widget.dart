@@ -3,7 +3,7 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 
 class CustomTextfield extends StatefulWidget {
-  CustomTextfield({
+  const CustomTextfield({
     super.key,
     required this.title,
     required this.controller,
@@ -37,7 +37,7 @@ class _CustomTextfieldState extends State<CustomTextfield> {
       onTapOutside: (event) => FocusScope.of(context).unfocus(),
       cursorColor: Colors.blueAccent,
       controller: widget.controller,
-      style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+      style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
       obscureText: widget.isPasswordField == true ? _obscureText : false,
       onSaved: widget.onSaved,
       validator: widget.validator,
@@ -45,7 +45,7 @@ class _CustomTextfieldState extends State<CustomTextfield> {
       decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         hintText: widget.title,
-        contentPadding: EdgeInsets.fromLTRB(15, 15, 8, 15),
+        contentPadding: const EdgeInsets.fromLTRB(15, 15, 8, 15),
         suffixIcon: GestureDetector(
           onTap: () {
             setState(() {

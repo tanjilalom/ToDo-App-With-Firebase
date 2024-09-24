@@ -8,7 +8,7 @@ import 'package:todo_app_with_firebase/widget/button_widget.dart';
 import 'package:todo_app_with_firebase/widget/textfield_widget.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -17,8 +17,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
 
   final FirebaseAuthServices _auth = FirebaseAuthServices();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
@@ -133,11 +133,12 @@ class _LoginScreenState extends State<LoginScreen> {
     User? user = await _auth.loginWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print("User is successfully logined");
+      print("User is successfully login");
       Get.toNamed('/home');
       Get.snackbar('Clicked', 'Login Successfully');
     } else {
-      print("Some Error Occure");
+      print("Some Error Occur");
+      Get.snackbar('Sorry', 'Please Enter A Correct Email and Password');
     }
   }
 }

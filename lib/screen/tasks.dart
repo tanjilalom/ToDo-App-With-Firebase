@@ -6,7 +6,7 @@ import 'package:todo_app_with_firebase/widget/update_task_dialog.dart';
 
 
 class Tasks extends StatefulWidget {
-  Tasks({Key? key}) : super(key: key);
+  const Tasks({Key? key}) : super(key: key);
   @override
   State<Tasks> createState() => _TasksState();
 }
