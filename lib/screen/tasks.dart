@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:todo_app_with_firebase/widget/delete_task_dialog.dart';
 import 'package:todo_app_with_firebase/widget/update_task_dialog.dart';
 
-
 class Tasks extends StatefulWidget {
   const Tasks({Key? key}) : super(key: key);
+
   @override
   State<Tasks> createState() => _TasksState();
 }
@@ -26,7 +26,8 @@ class _TasksState extends State<Tasks> {
           } else {
             return ListView(
               children: snapshot.data!.docs.map((DocumentSnapshot document) {
-                Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                Map<String, dynamic> data =
+                    document.data()! as Map<String, dynamic>;
                 Color taskColor = const Color(0xFF5871b6);
                 return Container(
                   height: 100,
@@ -52,8 +53,14 @@ class _TasksState extends State<Tasks> {
                         backgroundColor: taskColor,
                       ),
                     ),
-                    title: Text(data['taskName']),
-                    subtitle: Text(data['taskDesc']),
+                    title: Text(
+                      data['taskName'],
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                    subtitle: Text(
+                      data['taskDesc'],
+                      style: const TextStyle(fontSize: 15),
+                    ),
                     isThreeLine: true,
                     trailing: PopupMenuButton(
                       itemBuilder: (context) {
@@ -72,7 +79,11 @@ class _TasksState extends State<Tasks> {
                                 const Duration(seconds: 0),
                                 () => showDialog(
                                   context: context,
-                                  builder: (context) => UpdateTaskAlertDialog(taskId: taskId, taskName: taskName, taskDesc: taskDesc,),
+                                  builder: (context) => UpdateTaskAlertDialog(
+                                    taskId: taskId,
+                                    taskName: taskName,
+                                    taskDesc: taskDesc,
+                                  ),
                                 ),
                               );
                             },
@@ -83,14 +94,15 @@ class _TasksState extends State<Tasks> {
                               'Delete',
                               style: TextStyle(fontSize: 13.0),
                             ),
-                            onTap: (){
+                            onTap: () {
                               String taskId = (data['id']);
                               String taskName = (data['taskName']);
                               Future.delayed(
-                                Duration(seconds: 0),
-                                    () => showDialog(
+                                const Duration(seconds: 0),
+                                () => showDialog(
                                   context: context,
-                                  builder: (context) => DeleteTaskDialog(taskId: taskId, taskName:taskName),
+                                  builder: (context) => DeleteTaskDialog(
+                                      taskId: taskId, taskName: taskName),
                                 ),
                               );
                             },

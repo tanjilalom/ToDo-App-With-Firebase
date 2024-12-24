@@ -4,6 +4,7 @@ import 'package:todo_app_with_firebase/auth/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   final Widget? child;
+
   const SplashScreen({super.key, this.child});
 
   @override
@@ -16,8 +17,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
       //Navigator.pushAndRemoveUntil(context, CupertinoPageRoute(builder: (_) => LoginScreen()), (route) => false);
-      Get.offUntil(GetPageRoute(page: () => LoginScreen()), (route) => false,);
-
+      Get.offUntil(
+        GetPageRoute(page: () => const LoginScreen()),
+        (route) => false,
+      );
     });
   }
 

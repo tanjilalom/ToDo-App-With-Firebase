@@ -6,12 +6,11 @@ import 'package:get/get.dart';
 class UpdateTaskAlertDialog extends StatefulWidget {
   final String taskId, taskName, taskDesc;
 
-   const UpdateTaskAlertDialog(
-      {Key? Key,
+  const UpdateTaskAlertDialog(
+      {super.key,
       required this.taskId,
       required this.taskName,
-      required this.taskDesc})
-      : super(key: Key);
+      required this.taskDesc});
 
   @override
   State<UpdateTaskAlertDialog> createState() => _UpdateTaskAlertDialogState();

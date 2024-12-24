@@ -62,7 +62,7 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
                     vertical: 20,
                   ),
                   hintText: 'Description',
-                  hintStyle: TextStyle(fontSize: 14),
+                  hintStyle: const TextStyle(fontSize: 14),
                   icon: const Icon(CupertinoIcons.bubble_left_bubble_right,
                       color: Colors.brown),
                   border: OutlineInputBorder(
@@ -92,8 +92,7 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
             if (taskName.isNotEmpty && taskDesc.isNotEmpty) {
               try {
                 await _addTasks(taskName: taskName, taskDesc: taskDesc);
-                Navigator.of(context, rootNavigator: true)
-                    .pop(); // Close the dialog
+                Navigator.of(context).pop(); // Close the dialog
               } catch (e) {
                 // Show an error dialog if Firebase operation fails
                 showDialog(

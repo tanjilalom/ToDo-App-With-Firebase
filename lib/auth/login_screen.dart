@@ -15,7 +15,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   final FirebaseAuthServices _auth = FirebaseAuthServices();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -34,32 +33,32 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: Center(
             child: Form(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Login now',
                     style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     'Please Login to continue our app',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 55,
                   ),
                   CustomTextfield(
                     title: 'Email',
                     controller: _emailController,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
                   CustomTextfield(
@@ -67,14 +66,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _passwordController,
                     isPasswordField: true,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 72,
                   ),
                   InkWell(
                     onTap: () {
                       _login();
                     },
-                    child: CustomButton(
+                    child: const CustomButton(
                       buttonColor: Color(0xff0d6efd),
                       width: 335,
                       height: 56,
@@ -85,18 +84,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Don’t have an account?',
                         style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       InkWell(
@@ -104,9 +103,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                               context,
                               CupertinoPageRoute(
-                                  builder: (context) => SignupScreen()));
+                                  builder: (context) => const SignupScreen()));
                         },
-                        child: Text(
+                        child: const Text(
                           'Sign up',
                           style: TextStyle(
                             fontSize: 14,

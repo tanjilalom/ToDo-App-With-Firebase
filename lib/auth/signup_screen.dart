@@ -52,32 +52,32 @@ class _SignupScreenState extends State<SignupScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Sign up now',
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   'Please fill the details and create account',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 55,
                 ),
                 CustomTextfield(
                   title: 'Name',
                   controller: _usernameController,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 CustomTextfield(
                   title: 'Email',
                   controller: _emailController,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 CustomTextfield(
@@ -85,14 +85,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   controller: _passwordController,
                   isPasswordField: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 55,
                 ),
                 InkWell(
                   onTap: () {
                     _signup();
                   },
-                  child: CustomButton(
+                  child: const CustomButton(
                     buttonColor: Color(0xff0d6efd),
                     width: 335,
                     height: 56,
@@ -102,18 +102,18 @@ class _SignupScreenState extends State<SignupScreen> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Already have an account',
                       style:
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     InkWell(
@@ -121,9 +121,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         Navigator.pushReplacement(
                             context,
                             CupertinoPageRoute(
-                                builder: (context) => LoginScreen())),
+                                builder: (context) => const LoginScreen())),
                       },
-                      child: Text(
+                      child: const Text(
                         'Sign in',
                         style: TextStyle(
                           fontSize: 14,

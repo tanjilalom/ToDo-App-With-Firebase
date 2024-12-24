@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("To-Do List"),
+          title: const Text("To-Do List"),
         ),
         extendBody: true,
         //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -26,13 +26,13 @@ class _HomeScreenState extends State<HomeScreen> {
             showDialog(
               context: context,
               builder: (BuildContext context) {
-                return AddTaskAlertDialog();
+                return const AddTaskAlertDialog();
               },
             );
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
-        body: Center(
+        body: const Center(
           child: Tasks(),
         ));
   }
